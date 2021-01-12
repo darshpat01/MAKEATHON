@@ -79,3 +79,10 @@ ul.ba {
     height: 40px;
     width: 200px;
   }
+
+  /* timer */
+  .timerspan{
+    padding: 4px;
+    background: #FFB0F7;
+    opacity: 0.25;
+  }

@@ -1,14 +1,3 @@
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-
-
 // Set the date we're counting down to
 var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
 
@@ -26,11 +15,32 @@ var x = setInterval(function() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  console.log(days,hours,minutes);
+  console.log(seconds);
     
   // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  // document.getElementById("demo").innerHTML += days + "d " + hours + "h "
+  // + minutes + "m " + seconds + "s ";
+  // var str = `<h1>${days} d </h1>` + hours + "h " + minutes + "m " +seconds + "s "; 
+  var str=""; 
+  var time = String(days) + hours + minutes + seconds;
+  
+    for(var i =0;i<time.length; i++){
+    str+=`<span class="timerspan">${time[i]}</span>`
+    console.log(str); 
 
+    }
+    
+
+  
+
+  document.getElementById("demo").innerHTML = str;
+  // document.getElementById("demo").innerHTML = hours + "h ";
+  // document.getElementById("demo").innerHTML = minutes + "m ";
+  // document.getElementById("demo").innerHTML = seconds + "s ";
+
+  str = ""; 
   // styling the text
   document.getElementById("demo").style.color = "#ffffff";
 
